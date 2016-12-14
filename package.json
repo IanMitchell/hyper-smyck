@@ -1,0 +1,21 @@
+{
+  "name": "hyper-smyck",
+  "version": "1.0.0",
+  "description": "Hyper theme based on Smyck theme",
+  "license": "MIT",
+  "repository": "ianmitchell/hyper-smyck",
+  "author": {
+    "name": "Ian Mitchell",
+    "email": "ian.mitchel1@live.com",
+    "url": "http://ianmitchell.io"
+  },
+  "main": "index.js",
+  "keywords": [
+    "hyper",
+    "hyper-theme",
+    "hyperterm",
+    "hyperterm-theme",
+    "colors",
+    "smyck"
+  ]
+}
