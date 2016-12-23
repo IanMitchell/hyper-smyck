@@ -1,4 +1,5 @@
-const backgroundColor = 'rgba(29,29,29,0.5)';
+const backgroundColor = 'rgba(0,0,0,0.8)';
+const borderColor = 'transparent';
 const colors = {
   black: '#000000',
   red: '#c75646',
@@ -25,6 +26,26 @@ module.exports.onWindow = (browserWindow) => {
 module.exports.decorateConfig = (config) => {
   return Object.assign({}, config, {
     backgroundColor,
+    borderColor,
     colors,
+    css: `
+      ${config.css || ''}
+      .hyperterm_main {
+        border: none !important;
+      }
+      .tab_tab {
+        border: 0;
+        opacity: 0.5;
+      }
+      .tab_active {
+        opacity: 1;
+      }
+      .tab_textActive {
+        opacity: 1;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        border-image: -webkit-linear-gradient(right, ${colors.green}, ${colors.blue}) 100% 1;
+      }
+    `
   });
 }
