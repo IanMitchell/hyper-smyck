@@ -46,6 +46,9 @@ module.exports.decorateConfig = (config) => {
         border-style: solid;
         border-image: -webkit-linear-gradient(right, ${colors.green}, ${colors.blue}) 100% 1;
       }
+      .splitpane_divider {
+        background-image: -webkit-linear-gradient(right, ${colors.green}, ${colors.blue});
+      }
     `
   });
 }
