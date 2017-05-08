@@ -24,8 +24,7 @@ module.exports.onWindow = (browserWindow) => {
 }
 
 module.exports.decorateConfig = (config) => {
-  return Object.assign({}, config, {
-    backgroundColor,
+  return Object.assign({ backgroundColor }, config, {
     borderColor,
     colors,
     css: `
