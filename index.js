@@ -24,27 +24,49 @@ module.exports.onWindow = (browserWindow) => {
 }
 
 module.exports.decorateConfig = (config) => {
-  return Object.assign({ backgroundColor }, config, {
+  return Object.assign({}, config, {
+    backgroundColor,
     borderColor,
     colors,
     css: `
       ${config.css || ''}
-      .hyperterm_main {
-        border: none !important;
+
+      .hyper_main {
+        border: none;
       }
+
+      .tab_tab::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        border-image: -webkit-linear-gradient(right, ${colors.green}, ${colors.blue}) 100% 1;
+        transform: scaleX(0);
+        transition: none;
+      }
+
+      .tab_tab.tab_active::before {
+        transform: scaleX(1);
+        transition: all 300ms cubic-bezier(0.0, 0.0, 0.2, 1)
+      }
+
       .tab_tab {
         border: 0;
         opacity: 0.5;
       }
+
       .tab_active {
         opacity: 1;
       }
+
       .tab_textActive {
         opacity: 1;
-        border-width: 0px 0px 1px 0px;
-        border-style: solid;
-        border-image: -webkit-linear-gradient(right, ${colors.green}, ${colors.blue}) 100% 1;
       }
+
       .splitpane_divider {
         background-image: -webkit-linear-gradient(right, ${colors.green}, ${colors.blue});
       }
