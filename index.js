@@ -1,5 +1,5 @@
 // const backgroundColor = 'rgba(0,0,0,0.6)';
-const backgroundColor = 'rgba(0,0,0)';
+const backgroundColor = '#000000';
 const borderColor = 'transparent';
 const colors = {
   black: '#000000',
