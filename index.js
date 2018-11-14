@@ -1,4 +1,5 @@
-const backgroundColor = 'rgba(0,0,0,0.6)';
+// const backgroundColor = 'rgba(0,0,0,0.6)';
+const backgroundColor = 'rgba(0,0,0)';
 const borderColor = 'transparent';
 const colors = {
   black: '#000000',
@@ -19,11 +20,11 @@ const colors = {
   lightWhite: '#f7f7f7',
 };
 
-module.exports.onWindow = (browserWindow) => {
-  browserWindow.setVibrancy('dark');
-}
+// module.exports.onWindow = (browserWindow) => {
+//   browserWindow.setVibrancy('dark');
+// }
 
-module.exports.decorateConfig = (config) => {
+module.exports.decorateConfig = config => {
   return Object.assign({}, config, {
     backgroundColor,
     borderColor,
@@ -44,7 +45,9 @@ module.exports.decorateConfig = (config) => {
         height: 1px;
         border-width: 0px 0px 1px 0px;
         border-style: solid;
-        border-image: -webkit-linear-gradient(right, ${colors.green}, ${colors.blue}) 100% 1;
+        border-image: -webkit-linear-gradient(right, ${colors.green}, ${
+      colors.blue
+    }) 100% 1;
         transform: scaleX(0);
         transition: none;
       }
@@ -68,8 +71,10 @@ module.exports.decorateConfig = (config) => {
       }
 
       .splitpane_divider {
-        background-image: -webkit-linear-gradient(right, ${colors.green}, ${colors.blue});
+        background-image: -webkit-linear-gradient(right, ${colors.green}, ${
+      colors.blue
+    });
       }
-    `
+    `,
   });
-}
+};
